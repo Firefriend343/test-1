@@ -6,9 +6,23 @@
 
       
       <script>
-      document.addEventListener("keypress", function(){
-    console.log("hello")
-});
+        let left = 37;
+        let up = 38;
+        let right = 39;
+        let down = 40;
+
+        document.addEventListener("keydown", function(e){
+          console.log("hello "+e.keycode);
+          if (e.keycode == left) {
+            console.log("left");
+          } else if (e.keycode == right) {
+            console.log("right");
+          } else if (e.keycode == up) {
+            console.log("up");
+          } else if (e.keycode == down) {
+            console.log("down");
+          }
+        });
       </script>
   
     </div>
