@@ -16,8 +16,7 @@
         let down = 40;
 
         document.addEventListener("keydown", function(e) {
-          let player = document.getElementById("player");
-          console.log("hello "+e.keyCode);
+                  console.log("hello "+e.keyCode);
           if (e.keyCode == left) {
             console.log("left");
             dx -= 4;
@@ -31,15 +30,16 @@
             console.log("down");
             dy += 4;
           }
-          player.style.left = playerx + "px";
-          player.style.top = playery + "px";
 
         });
         
-        setInterval (function {
+        setInterval (function () { 
+        let player = document.getElementById("player");
         playerx = playerx + dx;             
         playery = playery + dy;
-                     },100);             
+        player.style.left = playerx + "px";
+        player.style.top = playery + "px";
+             },100);             
       </script>
   
     </div>
