@@ -6,9 +6,10 @@
 
       
       <script>
-        let playerLeft = 100;
-        let playerTop = 200;
-        
+        let playerx = 100;
+        let playery = 200;
+        let dx = 0;
+        let dy = 0;
         let left = 37;
         let up = 38;
         let right = 39;
@@ -19,23 +20,29 @@
           console.log("hello "+e.keyCode);
           if (e.keyCode == left) {
             console.log("left");
-            playerLeft -= 4;
+            dx -= 4;
           } else if (e.keyCode == right) {
             console.log("right");
-            playerLeft += 4;
+            dx += 4;
           } else if (e.keyCode == up) {
             console.log("up");
-            playerTop -= 4;
+            dy -= 4;
           } else if (e.keyCode == down) {
             console.log("down");
-            playerTop += 4;
+            dy += 4;
           }
-          player.style.left = playerLeft + "px";
-          player.style.top = playerTop + "px";
+          player.style.left = playerx + "px";
+          player.style.top = playery + "px";
 
         });
+        
+        setInterval (function {
+        playerx = playerx + dx;             
+        playery = playery + dy;
+                     },100);             
       </script>
   
     </div>
   </body>
+  
 </html>
