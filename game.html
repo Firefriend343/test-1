@@ -19,16 +19,16 @@
                   console.log("hello "+e.keyCode);
           if (e.keyCode == left) {
             console.log("left");
-            dx -= 4;
+            dx -= 1;
           } else if (e.keyCode == right) {
             console.log("right");
-            dx += 4;
+            dx += 1;
           } else if (e.keyCode == up) {
             console.log("up");
-            dy -= 4;
+            dy -= 1;
           } else if (e.keyCode == down) {
             console.log("down");
-            dy += 4;
+            dy += 1;
           }
 
         });
@@ -39,7 +39,7 @@
         playery = playery + dy;
         player.style.left = playerx + "px";
         player.style.top = playery + "px";
-             },100);             
+             },50);             
       </script>
   
     </div>
