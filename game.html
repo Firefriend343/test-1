@@ -63,10 +63,9 @@
         playerx = playerx + dx;             
         player.style.left = playerx + "px";
         player.style.top = playery + "px";
-        dx = dx + ax;
-        dy = dy + ay;
-        ax = ax / 2;
-        ay = ay / 2;
+        dx = (dx + ax) * 0.5;
+        dy = (dy + ay) * 0.5;
+        ay = ay + 1;
              },50);             
         </script>
   
