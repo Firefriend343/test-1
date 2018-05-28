@@ -10,6 +10,8 @@
         let playery = 200;
         let dx = 0;
         let dy = 0;
+        let ax = 0;
+        let ay = 0;
         let left = 37;
         let up = 38;
         let right = 39;
@@ -35,10 +37,20 @@
         
         setInterval (function () { 
         let player = document.getElementById("player");
+        if (playery + dy > 500) {
+          dy = 0;
+          ay = 0;
+          playery = 500;
+        } else {
+          playery = playery + dy;
+        }
         playerx = playerx + dx;             
-        playery = playery + dy;
         player.style.left = playerx + "px";
         player.style.top = playery + "px";
+        dx = dx + ax;
+        dy = dy + ay;
+        ax = ax / 2;
+        ay = ay / 2;
              },50);             
       </script>
   
