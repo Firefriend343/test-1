@@ -1,7 +1,7 @@
 <html>
   <body>
   
-    <div id="bg" style="width:500px; height:500px; background:#eee; border:2px solid black;">
+    <div id="bg" style="width:500px; height:500px; background:gray; border:2px solid black;">
       <img id="player" src="fire_elementalist-pixilart.png" style="position:absolute; left:100px; top:200px">
 
       
@@ -41,24 +41,19 @@
           dy = 0;
           ay = 0;
           playery = 450;
-        } else {
-          playery = playery + dy;
-        }
-        if (playery + dy > -25) {
+        } else if (playery + dy < -25) {
           dy = 0;
           ay = 0;
           playery = -25;
         } else {
           playery = playery + dy;
         }
-        if (playery + dx > 450) {
+          
+        if (playerx + dx > 450) {
           dx = 0;
           ax = 0;
           playerx = 450;
-        } else {
-          playerx = playerx + dx;
-        }
-        if (playery + dx > -25) {
+        } else if (playerx + dx < -25) {
           dx = 0;
           ax = 0;
           playerx = -25;
