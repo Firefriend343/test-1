@@ -1,7 +1,7 @@
 <html>
   <body>
   
-    <div id="bg" style="width:500px; height:500px; background:gray; border:2px solid black;">
+    <div id="bg" style="width:500px; height:500px; background:#eee; border:2px solid black;">
       <img id="player" src="fire_elementalist-pixilart.png" style="position:absolute; left:100px; top:200px">
 
       
@@ -27,7 +27,7 @@
             dx += 1;
           } else if (e.keyCode == up) {
             console.log("up");
-            dy -= 5;
+            dy -= 15;
           } else if (e.keyCode == down) {
             console.log("down");
             dy += 1;
@@ -63,8 +63,8 @@
         playerx = playerx + dx;             
         player.style.left = playerx + "px";
         player.style.top = playery + "px";
-        dx = (dx + ax) * 0.5;
-        dy = (dy + ay) * 0.5;
+        dx = (dx + ax) * 0.9;
+        dy = (dy + ay) * 0.9;
         ay = ay + 0.05;
              },50);             
         </script>
