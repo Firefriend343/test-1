@@ -6,7 +6,7 @@
   
     <div id="bg" style="width:500px; height:500px; background:#eee; border:2px solid black;">
       <img id="player" src="fire_elementalist-pixilart.png" style="position:absolute; left:100px; top:200px">
-      <div id="player_origin" style="position:absolute; background: cyan; left:100px; top:200px; width:4px; height:4px;"></div>
+      <div id="player_origin" style="position:absolute; background: pink; left:100px; top:200px; width:4px; height:4px;"></div>
 
       <div class="plat" style="left:250px; top:300px; height:80px; width: 90px;"> </div>
       <div class="plat" style="left:150px; top:200px; height:80px; width: 90px; "> </div>
@@ -63,14 +63,14 @@
           newy = playery + dy;
         }
           
-        if (playerx + dx > 480) {
+        if (playerx + dx > 500) {
           dx = 0;
           ax = 0;
-          newx = 480;
-        } else if (playerx + dx < 0) {
+          newx = 500;
+        } else if (playerx + dx < 20) {
           dx = 0;
           ax = 0;
-          newx = 0;
+          newx = 20;
         } else {
           newx = playerx + dx;
         }
