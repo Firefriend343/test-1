@@ -6,6 +6,8 @@
   
     <div id="bg" style="width:500px; height:500px; background:#eee; border:2px solid black;">
       <img id="player" src="fire_elementalist-pixilart.png" style="position:absolute; left:100px; top:200px">
+      <div id="player_origin" style="position:absolute; background: cyan; left:100px; top:200px; width:1px; height:1px;"></div>
+
       <div class="plat" style="left:200px; top:300px; height:80px; width: 90px;"> </div>
       <div class="plat" style="left:100px; top:200px; height:80px; width: 90px; "> </div>
       <div class="plat" style="left:10px; top:20px; height:80px; width: 90px; "> </div>
@@ -45,6 +47,7 @@
         
         setInterval (function () { 
         let player = document.getElementById("player");
+        let player_origin = document.getElementById("player_origin");
         let newx = playerx;
         let newy = playery;
         if (playery + dy > 450) {
@@ -77,6 +80,8 @@
         }
         player.style.left = playerx + "px";
         player.style.top = playery + "px";
+        player_origin.style.left = playerx + "px";
+        player_origin.style.top = playery + "px";
         dx = (dx + ax) * 0.9;
         dy = (dy + ay) * 0.9;
         ay = ay + 0.05;
