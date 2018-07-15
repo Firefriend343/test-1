@@ -17,6 +17,7 @@
       
       <script>
         let debug = document.getElementById("debug");
+        let state = "starting";
         let originx = 50, originy = 60;
         let playerx = 100;
         let playery = 200;
@@ -39,7 +40,7 @@
           } else if (e.keyCode == up && dy > -1 && dy < 1) {
             console.log("up");
             dy -= 15;
-            debug.innerText = "jump!";
+            state = "jump!";
           } else if (e.keyCode == down) {
             console.log("down");
             dy += 1;
@@ -56,12 +57,12 @@
           dy = 0;
           ay = 0;
           newy = 500;
-          debug.innerText = "hit floor";
+          state = "hit floor";
         } else if (playery + dy < 50) {
           dy = 0;
           ay = 0;
           newy = 50;
-          debug.innerText = "hit ceiling";
+          state = "hit ceiling";
         } else {
           newy = playery + dy;
         }
@@ -70,12 +71,12 @@
           dx = 0;
           ax = 0;
           newx = 500;
-          debug.innerText = "hit right side";
+          state = "hit right side";
         } else if (playerx + dx < 20) {
           dx = 0;
           ax = 0;
           newx = 20;
-          debug.innerText = "hit left side";
+          state = "hit left side";
         } else {
           newx = playerx + dx;
         }
@@ -83,28 +84,29 @@
         if (!collision(newx, newy) || collision(playerx, playery)) {
           playery = newy;
           playerx = newx;
-          debug.innerText = "floating";
+          state = "floating";
         } else if (!collision(newx, playery)) {
           playerx = newx;
           dy = 0;
           ay = 0;
-          debug.innerText = "skating";
+          state = "skating";
         } else if (!collision(playerx, newy)) {
           playery = newy;
           dx = 0;
           ax = 0;
-          debug.innerText = "falling straight down";
+          state = "falling straight down";
         } else {
           dx = 0;
           ax = 0;
           dy = 0;
           ay = 0;
-          debug.innerText = "blocked";
+          state = "blocked";
         }
         player.style.left = (playerx - originx) + "px";
         player.style.top = (playery - originy) + "px";
         player_origin.style.left = playerx + "px";
         player_origin.style.top = playery + "px";
+        debug.innerText = state + " (" + playerx + ", " + playery + ") + (" + dx + ", " + dy + ")";
         dx = (dx + ax) * 0.9;
         dy = (dy + ay) * 0.9;
         ay = ay + 0.05;
