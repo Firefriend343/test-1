@@ -13,9 +13,10 @@
       <div class="plat" style="left:190px; top:260px; height:80px; width: 90px; "> </div>
       
     </div>
-
+    <p id="debug"></p>
       
       <script>
+        let debug = document.getElementById("debug");
         let originx = 50, originy = 60;
         let playerx = 100;
         let playery = 200;
@@ -38,6 +39,7 @@
           } else if (e.keyCode == up && dy > -1 && dy < 1) {
             console.log("up");
             dy -= 15;
+            debug.innerText = "jump!";
           } else if (e.keyCode == down) {
             console.log("down");
             dy += 1;
@@ -54,12 +56,12 @@
           dy = 0;
           ay = 0;
           newy = 500;
-          console.log("hit floor");
+          debug.innerText = "hit floor";
         } else if (playery + dy < 50) {
           dy = 0;
           ay = 0;
           newy = 50;
-          console.log("hit ceiling");
+          debug.innerText = "hit ceiling";
         } else {
           newy = playery + dy;
         }
@@ -68,12 +70,12 @@
           dx = 0;
           ax = 0;
           newx = 500;
-          console.log("hit right side");
+          debug.innerText = "hit right side";
         } else if (playerx + dx < 20) {
           dx = 0;
           ax = 0;
           newx = 20;
-          console.log("hit left side");
+          debug.innerText = "hit left side";
         } else {
           newx = playerx + dx;
         }
@@ -81,23 +83,23 @@
         if (!collision(newx, newy) || collision(playerx, playery)) {
           playery = newy;
           playerx = newx;
-          console.log("I'm free");
+          debug.innerText = "floating";
         } else if (!collision(newx, playery)) {
           playerx = newx;
           dy = 0;
           ay = 0;
-          console.log("skating");
+          debug.innerText = "skating";
         } else if (!collision(playerx, newy)) {
           playery = newy;
           dx = 0;
           ax = 0;
-          console.log("falling straight down");
+          debug.innerText = "falling straight down";
         } else {
           dx = 0;
           ax = 0;
           dy = 0;
           ay = 0;
-          console.log("blocked");
+          debug.innerText = "blocked";
         }
         player.style.left = (playerx - originx) + "px";
         player.style.top = (playery - originy) + "px";
