@@ -45,30 +45,36 @@
         
         setInterval (function () { 
         let player = document.getElementById("player");
+        let newx = playerx;
+        let newy = playery;
         if (playery + dy > 450) {
           dy = 0;
           ay = 0;
-          playery = 450;
+          newy = 450;
         } else if (playery + dy < -25) {
           dy = 0;
           ay = 0;
-          playery = -25;
+          newy = -25;
         } else {
-          playery = playery + dy;
+          newy = playery + dy;
         }
           
         if (playerx + dx > 450) {
           dx = 0;
           ax = 0;
-          playerx = 450;
+          newx = 450;
         } else if (playerx + dx < -25) {
           dx = 0;
           ax = 0;
-          playerx = -25;
+          newx = -25;
         } else {
-          playerx = playerx + dx;
+          newx = playerx + dx;
         }
-        playerx = playerx + dx;             
+        newx = newx + dx;
+        if (true) {
+          playery = newy;
+          playerx = newx;
+        }
         player.style.left = playerx + "px";
         player.style.top = playery + "px";
         dx = (dx + ax) * 0.9;
