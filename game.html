@@ -6,7 +6,7 @@
   
     <div id="bg" style="width:500px; height:500px; background:#eee; border:2px solid black;">
       <img id="player" src="fire_elementalist-pixilart.png" style="position:absolute; left:100px; top:200px">
-      <div id="player_origin" style="position:absolute; background: cyan; left:100px; top:200px; width:4px; height:4px;"></div>
+      <div id="player_origin" style="position:absolute; background: green; left:100px; top:200px; width:4px; height:4px;"></div>
 
       <div class="plat" style="left:250px; top:300px; height:80px; width: 90px;"> </div>
       <div class="plat" style="left:150px; top:200px; height:80px; width: 90px; "> </div>
@@ -29,7 +29,6 @@
         let down = 40;
 
         document.addEventListener("keydown", function(e) {
-                  console.log("hello "+e.keyCode);
           if (e.keyCode == left) {
             console.log("left");
             dx -= 1;
@@ -55,10 +54,12 @@
           dy = 0;
           ay = 0;
           newy = 500;
+          console.log("hit floor");
         } else if (playery + dy < 50) {
           dy = 0;
           ay = 0;
           newy = 50;
+          console.log("hit ceiling");
         } else {
           newy = playery + dy;
         }
@@ -67,10 +68,12 @@
           dx = 0;
           ax = 0;
           newx = 500;
+          console.log("hit right side");
         } else if (playerx + dx < 20) {
           dx = 0;
           ax = 0;
           newx = 20;
+          console.log("hit left side");
         } else {
           newx = playerx + dx;
         }
@@ -78,19 +81,23 @@
         if (!collision(newx, newy) || collision(playerx, playery)) {
           playery = newy;
           playerx = newx;
+          console.log("I'm free");
         } else if (!collision(newx, playery)) {
           playerx = newx;
           dy = 0;
           ay = 0;
+          console.log("skating");
         } else if (!collision(playerx, newy)) {
           playery = newy;
           dx = 0;
           ax = 0;
+          console.log("falling straight down");
         } else {
           dx = 0;
           ax = 0;
           dy = 0;
           ay = 0;
+          console.log("blocked");
         }
         player.style.left = (playerx - originx) + "px";
         player.style.top = (playery - originy) + "px";
