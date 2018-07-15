@@ -8,8 +8,8 @@
       <img id="player" src="fire_elementalist-pixilart.png" style="position:absolute; left:100px; top:200px">
       <div id="player_origin" style="position:absolute; background: cyan; left:100px; top:200px; width:4px; height:4px;"></div>
 
-      <div class="plat" style="left:200px; top:300px; height:80px; width: 90px;"> </div>
-      <div class="plat" style="left:100px; top:200px; height:80px; width: 90px; "> </div>
+      <div class="plat" style="left:250px; top:300px; height:80px; width: 90px;"> </div>
+      <div class="plat" style="left:150px; top:200px; height:80px; width: 90px; "> </div>
       <div class="plat" style="left:10px; top:20px; height:80px; width: 90px; "> </div>
       
     </div>
@@ -79,8 +79,8 @@
           playery = newy;
           playerx = newx;
         }
-        player.style.left = playerx - originx + "px";
-        player.style.top = playery - originy + "px";
+        player.style.left = (playerx - originx) + "px";
+        player.style.top = (playery - originy) + "px";
         player_origin.style.left = playerx + "px";
         player_origin.style.top = playery + "px";
         dx = (dx + ax) * 0.9;
