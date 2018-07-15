@@ -71,7 +71,7 @@
           newx = playerx + dx;
         }
         newx = newx + dx;
-        if (true) {
+        if (!collision(newx, newy)) {
           playery = newy;
           playerx = newx;
         }
@@ -80,8 +80,24 @@
         dx = (dx + ax) * 0.9;
         dy = (dy + ay) * 0.9;
         ay = ay + 0.05;
-             },50);             
-        </script>
+             },50);      
+        
+        function collision(x, y) {
+          let plats = document.getElementsByClassName("plat");
+          for (let i = 0; i < plats.length; i++) {
+            let plat = plats[i];
+            if (inside(x, y, plat.offsetTop, plat.offsetLeft, plat.offsetHeight, plat.offsetWidth)) {
+             return true; 
+            }
+          }
+          return false;
+        }
+        
+        function inside(x, y, top, left, width, height) {
+          return (x >= left && x <= left + width &&
+                  y >= top && y <= top + height);
+        }
+    </script>
   
   </body>
   
