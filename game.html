@@ -51,11 +51,11 @@
         let player_origin = document.getElementById("player_origin");
         let newx = playerx;
         let newy = playery;
-        if (playery + dy > 450) {
+        if (playery + dy > 500) {
           dy = 0;
           ay = 0;
           newy = 450;
-        } else if (playery + dy < -25) {
+        } else if (playery + dy < 0) {
           dy = 0;
           ay = 0;
           newy = -25;
@@ -63,11 +63,11 @@
           newy = playery + dy;
         }
           
-        if (playerx + dx > 450) {
+        if (playerx + dx > 500) {
           dx = 0;
           ax = 0;
           newx = 450;
-        } else if (playerx + dx < -25) {
+        } else if (playerx + dx < 40) {
           dx = 0;
           ax = 0;
           newx = -25;
