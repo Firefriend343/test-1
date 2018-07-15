@@ -55,22 +55,22 @@
           dy = 0;
           ay = 0;
           newy = 500;
-        } else if (playery + dy < 0) {
+        } else if (playery + dy < 30) {
           dy = 0;
           ay = 0;
-          newy = -0;
+          newy = 30;
         } else {
           newy = playery + dy;
         }
           
-        if (playerx + dx > 500) {
+        if (playerx + dx > 480) {
           dx = 0;
           ax = 0;
-          newx = 500;
-        } else if (playerx + dx < 40) {
+          newx = 480;
+        } else if (playerx + dx < 0) {
           dx = 0;
           ax = 0;
-          newx = 40;
+          newx = 0;
         } else {
           newx = playerx + dx;
         }
@@ -78,6 +78,11 @@
         if (!collision(newx, newy) || collision(playerx, playery)) {
           playery = newy;
           playerx = newx;
+        } else {
+          dx = 0;
+          ax = 0;
+          dy = 0;
+          ay = 0;
         }
         player.style.left = (playerx - originx) + "px";
         player.style.top = (playery - originy) + "px";
