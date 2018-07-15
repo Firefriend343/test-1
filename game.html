@@ -78,12 +78,11 @@
         if (!collision(newx, newy) || collision(playerx, playery)) {
           playery = newy;
           playerx = newx;
-        else if (!collision(newx, playery)) {
+        } else if (!collision(newx, playery)) {
           playerx = newx;
           dy = 0;
           ay = 0;
-        }
-        else if (!collision(playerx, newy)) {
+        } else if (!collision(playerx, newy)) {
           playery = newy;
           dx = 0;
           ax = 0;
