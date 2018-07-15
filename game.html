@@ -54,11 +54,11 @@
         if (playery + dy > 500) {
           dy = 0;
           ay = 0;
-          newy = 450;
+          newy = 500;
         } else if (playery + dy < 0) {
           dy = 0;
           ay = 0;
-          newy = -25;
+          newy = -0;
         } else {
           newy = playery + dy;
         }
@@ -66,11 +66,11 @@
         if (playerx + dx > 500) {
           dx = 0;
           ax = 0;
-          newx = 450;
+          newx = 500;
         } else if (playerx + dx < 40) {
           dx = 0;
           ax = 0;
-          newx = -25;
+          newx = 40;
         } else {
           newx = playerx + dx;
         }
