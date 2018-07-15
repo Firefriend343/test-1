@@ -55,10 +55,10 @@
           dy = 0;
           ay = 0;
           newy = 500;
-        } else if (playery + dy < 30) {
+        } else if (playery + dy < 50) {
           dy = 0;
           ay = 0;
-          newy = 30;
+          newy = 50;
         } else {
           newy = playery + dy;
         }
@@ -113,8 +113,8 @@
         }
         
         function inside(x, y, top, left, width, height) {
-          return (x >= left && x <= left + width &&
-                  y >= top && y <= top + height);
+          return (x >= left && x <= left + width + 20 &&
+                  y >= top && y <= top + height + 50);
         }
     </script>
   
