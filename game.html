@@ -75,7 +75,7 @@
           newx = playerx + dx;
         }
         newx = newx + dx;
-        if (!collision(newx, newy)) {
+        if (!collision(newx, newy) || collision(playerx, playery)) {
           playery = newy;
           playerx = newx;
         }
