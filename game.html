@@ -106,7 +106,8 @@
         player.style.top = (playery - originy) + "px";
         player_origin.style.left = playerx + "px";
         player_origin.style.top = playery + "px";
-        debug.innerText = state + " (" + playerx + ", " + playery + ") + (" + dx + ", " + dy + ")";
+        debug.innerText = state + " (" + Math.floor(playerx) + ", " + Math.floor(playery) + ") + 
+        (" + Math.floor(dx * 100) / 100 + ", " + Math.floor(dy * 100) / 100 + ")";
         dx = (dx + ax) * 0.9;
         dy = (dy + ay) * 0.9;
         ay = ay + 0.05;
