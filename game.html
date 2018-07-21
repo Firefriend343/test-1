@@ -116,13 +116,17 @@
             player.y = newy;
             player.x = newx;
             player.state = "floating";
-          } else  if (!collision((3 * player.x + newx)/4, (3 * player.y + newy)/4, player_img)) {
+          } else  if (!collision((player.x + 3 * newx)/4, (player.y + 3 * newy)/4, player_img)) {
             player.y = (3 * player.y + newy)/4;
             player.x = (3 * player.x + newx)/4;
             player.state = "floating";
           } else  if (!collision((player.x + newx)/2, (player.y + newy)/2, player_img)) {
             player.y = (player.y + newy)/2;
             player.x = (player.x + newx)/2;
+            player.state = "floating";
+          } else  if (!collision((3 * player.x + newx)/4, (3 * player.y + newy)/4, player_img)) {
+            player.y = (3 * player.y + newy)/4;
+            player.x = (3 * player.x + newx)/4;
             player.state = "floating";
           } else if (!collision(newx, player.y, player_img)) {
             player.x = newx;
