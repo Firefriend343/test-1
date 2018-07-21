@@ -57,17 +57,17 @@
           }
           if (e.key == "a") {
             console.log("a");
-            player1.dx -= 1;
+            player2.dx -= 1;
           } else if (e.key == "d") {
             console.log("d");
-            player1.dx += 1;
-          } else if (e.key == "w" && player1.dy > -1 && player1.dy < 1) {
+            player2.dx += 1;
+          } else if (e.key == "w" && player2.dy > -1 && player2.dy < 1) {
             console.log("w");
-            player1.dy -= 15;
-            player1.state = "jump!";
+            player2.dy -= 15;
+            player2.state = "jump!";
           } else if (e.keyCode == "s") {
             console.log("s");
-            player1.dy += 1;
+            player2.dy += 1;
           }
 
         });
