@@ -116,6 +116,10 @@
             player.y = newy;
             player.x = newx;
             player.state = "floating";
+          } else  if (!collision((3 * player.x + newx)/4, (3 * player.y + newy)/4, player_img)) {
+            player.y = (3 * player.y + newy)/4;
+            player.x = (3 * player.x + newx)/4;
+            player.state = "floating";
           } else  if (!collision((player.x + newx)/2, (player.y + newy)/2, player_img)) {
             player.y = (player.y + newy)/2;
             player.x = (player.x + newx)/2;
@@ -162,7 +166,7 @@
         
         function inside(x, y, top, left, width, height) {
           return (x >= left && x - 20 <= left + width &&
-                  y + 1 >= top && y - 20 <= top + height);
+                  y >= top && y - 20 <= top + height);
         }
     </script>
   
