@@ -110,7 +110,9 @@
             newx = player.x + player.dx;
           }
           newx = newx + player.dx;
-          if (!collision(newx, newy, player_img) || collision(player.x, player.y, player_img)) {
+          if (!collision(newx, newy, player_img) 
+              /* || collision(player.x, player.y, player_img) */
+             ) {
             player.y = newy;
             player.x = newx;
             player.state = "floating";
@@ -124,14 +126,13 @@
             player.dx = 0;
             player.ax = 0;
             player.state = "falling straight down";
-          } 
-          /* else {
+          } else {
             player.dx = 0;
             player.ax = 0;
             player.dy = 0;
             player.ay = 0;
             state = "blocked";
-          } */
+          }
           player_img.style.left = (player.x - originx) + "px";
           player_img.style.top = (player.y - originy) + "px";
           player_origin.style.left = player.x + "px";
