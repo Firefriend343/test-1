@@ -8,14 +8,15 @@
       <img id="player1" src="fire_elementalist-pixilart.png" style="position:absolute; left:100px; top:200px">
       <div id="player1_origin" style="position:absolute; background: green; left:100px; top:200px; width:4px; height:4px;"></div>
       <img id="player2" src="fire_elementalist-pixilart.png" style="position:absolute; left:150px; top:200px">
-      <div id="player2_origin" style="position:absolute; background: green; left:150px; top:200px; width:4px; height:4px;"></div>
+      <div id="player2_origin" style="position:absolute; background: pink; left:150px; top:200px; width:4px; height:4px;"></div>
 
       <div class="plat" style="left:250px; top:300px; height:80px; width: 90px;"> </div>
       <div class="plat" style="left:150px; top:200px; height:80px; width: 90px; "> </div>
       <div class="plat" style="left:190px; top:260px; height:80px; width: 90px; "> </div>
       
     </div>
-    <p id="debug"></p>
+    <p id="player1_debug"></p>
+    <p id="player2_debug"></p>
       
       <script>
         class Player {
@@ -31,7 +32,6 @@
           }
         }
         
-        let debug = document.getElementById("debug");
         let player1 = new Player(100, 200, "player1");
         let player2 = new Player(150, 200, "player2");
         let originx = 50, originy = 60;
@@ -135,6 +135,7 @@
           player_img.style.top = (player.y - originy) + "px";
           player_origin.style.left = player.x + "px";
           player_origin.style.top = player.y + "px";
+          let debug = document.getElementById(player.id + "_debug");
           debug.innerText = player.state + " (" + Math.floor(player.x) + ", " + Math.floor(player.y) + ") + (" + Math.floor(player.dx * 100) / 100 + ", " + Math.floor(player.dy * 100) / 100 + ")";
           player.dx = (player.dx + player.ax) * 0.9;
           player.dy = (player.dy + player.ay) * 0.9;
