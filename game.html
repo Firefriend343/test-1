@@ -82,10 +82,10 @@
           let player_origin = document.getElementById(player.id + "_origin");
           let newx = player.x;
           let newy = player.y;
-          if (player.y + player.dy > 508) {
+          if (player.y + player.dy > 510) {
             player.dy = 0;
             player.ay = 0;
-            newy = 508;
+            newy = 510;
             player.state = "hit floor";
           } else if (player.y + player.dy < 50) {
             player.dy = 0;
