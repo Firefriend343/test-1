@@ -110,16 +110,16 @@
             newx = player.x + player.dx;
           }
           newx = newx + player.dx;
-          if (!collision(newx, newy) || collision(player.x, player.y)) {
+          if (!collision(newx, newy, player_img) || collision(player.x, player.y, player_img)) {
             player.y = newy;
             player.x = newx;
             player.state = "floating";
-          } else if (!collision(newx, player.y)) {
+          } else if (!collision(newx, player.y, player_img)) {
             player.x = newx;
             player.dy = 0;
             player.ay = 0;
             player.state = "skating";
-          } else if (!collision(player.x, newy)) {
+          } else if (!collision(player.x, newy, player_img)) {
             player.y = newy;
             player.dx = 0;
             player.ax = 0;
@@ -142,11 +142,12 @@
           player.ay = player.ay + 0.05;
         }      
         
-        function collision(x, y) {
-          let plats = document.getElementsByClassName("solid");
-          for (let i = 0; i < plats.length; i++) {
-            let plat = plats[i];
-            if (inside(x, y, plat.offsetTop, plat.offsetLeft, plat.offsetHeight, plat.offsetWidth)) {
+        function collision(x, y, myself) {
+          let solids = document.getElementsByClassName("solid");
+          for (let i = 0; i < solids.length; i++) {
+            let solid = solids[i];
+            if (solid != myself &&
+                inside(x, y, solid.offsetTop, solid.offsetLeft, solid.offsetHeight, solid.offsetWidth)) {
              return true; 
             }
           }
