@@ -34,7 +34,7 @@
         
         let player1 = new Player(100, 200, "player1");
         let player2 = new Player(150, 200, "player2");
-        let originx = 50, originy = 60;
+        let originx = 50, originy = 58;
         let left = 37;
         let up = 38;
         let right = 39;
@@ -115,6 +115,10 @@
              ) {
             player.y = newy;
             player.x = newx;
+            player.state = "floating";
+          } else  if (!collision((player.x + newx)/2, (player.y + newy)/2, player_img)) {
+            player.y = (player.y + newy)/2;
+            player.x = (player.x + newx)/2;
             player.state = "floating";
           } else if (!collision(newx, player.y, player_img)) {
             player.x = newx;
