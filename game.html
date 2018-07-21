@@ -11,7 +11,7 @@
       <div id="player2_origin" style="position:absolute; background: pink; left:150px; top:200px; width:4px; height:4px;"></div>
 
       <div class="plat solid" style="left:50px; top:210px; height:80px; width: 190px; "> </div>
-      <div class="plat solid" style="left:190px; top:260px; height:80px; width: 90px; "> </div>
+      <div class="plat" style="left:190px; top:260px; height:80px; width: 90px; "> </div>
       <div class="plat solid" style="left:250px; top:300px; height:80px; width: 90px;"> </div>
       <div class="plat solid" style="left:290px; top:360px; height:80px; width: 90px; "> </div>
       
@@ -162,7 +162,7 @@
           for (let i = 0; i < solids.length; i++) {
             let solid = solids[i];
             if (solid != myself &&
-                inside(x, y, solid.offsetTop, solid.offsetLeft, solid.offsetHeight, solid.offsetWidth)) {
+                inside(x, y, solid.offsetTop, solid.offsetLeft, solid.offsetWidth, solid.offsetHeight)) {
              return true; 
             }
           }
