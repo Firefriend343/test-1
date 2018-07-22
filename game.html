@@ -6,10 +6,10 @@
   </style>
   <body>
   
-    <div id="bg" style="width:1250px; height:700px; background:#eee; border:2px solid black;">
+    <div id="bg" style="width:1200px; height:700px; background:#eee; border:2px solid black;">
       <img id="player1" class="solid" src="fire_elementalist-pixilart.png" style="position:absolute; left:100px; top:100px">
       <div id="player1_origin" style="position:absolute; background: green; left:100px; top:100px; width:4px; height:4px;"></div>
-      <img id="player2" class="solid" src="fire_elementalist-pixilart.png" style="position:absolute; left:150px; top:100px">
+      <img id="player2" class="solid" src="fire_elementalist-pixilart.png" style="position:absolute; left:150px; top:100px; transform: scaleX(-1);">
       <div id="player2_origin" style="position:absolute; background: pink; left:150px; top:100px; width:4px; height:4px;"></div>
 
       <div class="plat solid" style="left:50px; top:210px; height:20px; width: 190px; "> </div>
@@ -136,10 +136,10 @@
             newy = player.y + player.dy;
           }
           
-          if (player.x + player.dx > 1250) {
+          if (player.x + player.dx > 1200) {
             player.dx = 0;
             player.ax = 0;
-            newx = 1250;
+            newx = 1200;
             player.state = "hit right side";
           } else if (player.x + player.dx < 20) {
             player.dx = 0;
