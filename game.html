@@ -4,7 +4,7 @@
   </style>
   <body>
   
-    <div id="bg" style="width:500px; height:500px; background:#eee; border:2px solid black;">
+    <div id="bg" style="width:1250px; height:700px; background:#eee; border:2px solid black;">
       <img id="player1" class="solid" src="fire_elementalist-pixilart.png" style="position:absolute; left:100px; top:200px">
       <div id="player1_origin" style="position:absolute; background: green; left:100px; top:200px; width:4px; height:4px;"></div>
       <img id="player2" class="solid" src="fire_elementalist-pixilart.png" style="position:absolute; left:150px; top:200px">
@@ -105,10 +105,10 @@
           let player_origin = document.getElementById(player.id + "_origin");
           let newx = player.x;
           let newy = player.y;
-          if (player.y + player.dy > 510) {
+          if (player.y + player.dy > 710) {
             player.dy = 0;
             player.ay = 0;
-            newy = 510;
+            newy = 710;
             player.state = "hit floor";
           } else if (player.y + player.dy < 50) {
             player.dy = 0;
@@ -119,10 +119,10 @@
             newy = player.y + player.dy;
           }
           
-          if (player.x + player.dx > 500) {
+          if (player.x + player.dx > 1250) {
             player.dx = 0;
             player.ax = 0;
-            newx = 500;
+            newx = 1250;
             player.state = "hit right side";
           } else if (player.x + player.dx < 20) {
             player.dx = 0;
