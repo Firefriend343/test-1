@@ -109,11 +109,11 @@
           if (player.command == "go left") {
             console.log("left");
             player.dx -= 1;
-            player.style.transform = "scaleX(1)";
+            player_img.style.transform = "scaleX(1)";
           } else if (player.command == "go right") {
             console.log("right");
             player.dx += 1;
-            player.style.transform = "scaleX(-1)";
+            player_img.style.transform = "scaleX(-1)";
           } else if (player.command == "jump" && player.dy > -1 && player.dy < 1) {
             console.log("up");
             player.dy -= 15;
