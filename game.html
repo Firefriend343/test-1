@@ -7,7 +7,7 @@
   <body>
   
     <div id="bg" style="width:1200px; height:700px; background:#eee; border:2px solid black;">
-      <img id="player1" class="solid" src="ninja_null-pixilart (1).png" style="position:absolute; left:100px; top:100px">
+      <img id="player1" class="solid" src="ninja_null-pixilart (1).png" style="position:absolute; left:100px; top:100px" width=75 height=75>
       <div id="player1_origin" style="position:absolute; background: green; left:100px; top:100px; width:4px; height:4px;"></div>
       <img id="player2" class="solid" src="fire_elementalist-pixilart.png" style="position:absolute; left:150px; top:100px; transform: rotate(4deg);">
       <div id="player2_origin" style="position:absolute; background: pink; left:150px; top:100px; width:4px; height:4px;"></div>
@@ -53,7 +53,7 @@
         
         let player1 = new Player(100, 100, "player1");
         let player2 = new Player(150, 100, "player2");
-        let originx = 50, originy = 62;
+        let originx = 50, originy = 0;
         let left = 37;
         let up = 38;
         let right = 39;
