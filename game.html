@@ -112,11 +112,11 @@
           if (player.command == "go left") {
             console.log("left");
             player.dx -= 1;
-            player_img.style.transform = "scaleX(1)";
+            player_img.style.transform = "scaleX(-1)";
           } else if (player.command == "go right") {
             console.log("right");
             player.dx += 1;
-            player_img.style.transform = "scaleX(-1)";
+            player_img.style.transform = "scaleX(1)";
           } else if (player.command == "jump" && player.dy > -1 && player.dy < 1) {
             console.log("up");
             player.dy -= 15;
@@ -212,7 +212,7 @@
         function collision(x, y, myself, opt_className) {
           let solids = document.getElementsByClassName(opt_className || "solid");
           for (let i = 0; i < solids.length; i++) {
-            let solid = solids[i];
+            let solid = solids[iT
             if (solid != myself &&
                 inside(x, y, solid.offsetTop, solid.offsetLeft, solid.offsetWidth, solid.offsetHeight)) {
              return solid; 
